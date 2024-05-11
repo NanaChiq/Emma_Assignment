@@ -10,7 +10,7 @@ pipeline {
         // Set the application version
         APP_VERSION = '1.0'
 
-        SUDO_ASKPASS = '1234'
+        PYTHON_EXECUTABLE = 'python3'
     }
 
     stages {
@@ -34,14 +34,14 @@ pipeline {
                 echo "Preparation stage"
 
                 // Setting up my virtual environment
-                sh "python -m venv $VIRTUAL_ENV"
+                sh "python -m venv ${VIRTUAL_ENV}"
 
                 // Activate the virtual environment
-                sh ". $VIRTUAL_ENV/bin/activate"
+                sh ". ${VIRTUAL_ENV}/bin/activate"
                 
                 // Install dependencies, assuming all the neccessary requirements.txt
-                //sh "pip install -r requirements.txt"
-                sh 'sudo -S apt install python3-tkinter'
+                sh "pip install -r requirements.txt"
+                
                 
                 // Additional dependencies for the PyInstaller using the PiP 
                 //sh "pip install pyinstaller"
