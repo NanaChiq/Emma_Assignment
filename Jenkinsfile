@@ -1,15 +1,15 @@
 pipeline {
-    agent {dockerfile true}
+    agent any
 
      // Setuping our environment
-    environment {
+    /* environment {
         // Setuping out virtual envrionment
         VIRTUAL_ENV = 'venv'
         // Give the name of the application
         APP_NAME = 'mainMBIApp'
         // Set the application version
         APP_VERSION = '1.0'
-    }
+    } */
 
     stages {
         // Checking if github exist
@@ -17,10 +17,10 @@ pipeline {
             steps {
                 // Print on the teminal.
                 echo 'Checkout stage'
-                
+                sh 'python3 --version'
 
                 // Checking out for the GitHub repository
-               checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NanaChiq/Emma_Assignment.git']])
+               //checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NanaChiq/Emma_Assignment.git']])
      
             }
         }
@@ -31,7 +31,7 @@ pipeline {
                     // Print on the teminal.
                     echo "Preparation stage"
 
-                    sh 'pip install python3'
+                    sh 'python3 mainApp.py'
 
                     // Setting up my virtual environment
                     //sh "python -m venv $VIRTUAL_ENV"
