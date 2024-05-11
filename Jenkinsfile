@@ -32,21 +32,21 @@ pipeline {
                 echo "Preparation stage"
 
                 // Setting up my virtual environment
-                ////sh "python3 -m venv $VIRTUAL_ENV"
+                sh "python3 -m venv $VIRTUAL_ENV"
 
                 // Activate the virtual environment
-                ////sh ". $VIRTUAL_ENV/bin/activate"
+                sh ". $VIRTUAL_ENV/bin/activate"
                 
                 // Install dependencies, assuming all the neccessary requirements.txt
                 //sh "pip install -r requirements.txt"
-                ////sh 'sudo -S apt install python3-tkinter'
+                sh 'sudo apt install python3-tkinter'
                 
                 // Additional dependencies for the PyInstaller using the PiP 
                 //sh "pip install pyinstaller"
                 //sh "apt install python3-pyinstaller"
-                withPythonEnv('/usr/bin/python3.8') {
+                /* withPythonEnv('/usr/bin/python3.8') {
                     sh 'echo "Job is starting" '
-                } 
+                } */ 
                 
             }
         }
