@@ -32,10 +32,10 @@ pipeline {
                 echo "Preparation stage"
 
                 // Setting up my virtual environment
-                //sh "python3 -m venv $VIRTUAL_ENV"
+                sh "python3 -m venv $VIRTUAL_ENV"
 
                 // Activate the virtual environment
-                //sh ". $VIRTUAL_ENV/bin/activate"
+                sh ". $VIRTUAL_ENV/bin/activate"
                 
                 // Install dependencies, assuming all the neccessary requirements.txt
                 sh "pip install -r requirements.txt"
