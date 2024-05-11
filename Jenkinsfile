@@ -33,7 +33,7 @@ pipeline {
                 // Print on the teminal.
                 echo "Preparation stage"
 
-                git 'https://github.com/NanaChiq/Emma_Assignment.git'
+                ///////git 'https://github.com/NanaChiq/Emma_Assignment.git'
 
                 // Setting up my virtual environment
                 sh "python -m venv ${VIRTUAL_ENV}"
