@@ -27,34 +27,34 @@ pipeline {
 
         stage('Preparation_Stage') {
             steps {
-                script {
-                    // Print on the teminal.
-                    echo "Preparation stage"
+                
+                // Print on the teminal.
+                echo "Preparation stage"
 
-                    sh 'python3 mainApp.py'
+                sh 'python3 mainApp.py'
 
-                    // Setting up my virtual environment
-                    //sh "python -m venv $VIRTUAL_ENV"
+                // Setting up my virtual environment
+                //sh "python -m venv $VIRTUAL_ENV"
 
-                    // Activate the virtual environment
-                    ////sh ". $VIRTUAL_ENV/bin/activate"
-                    
-                    // Install dependencies, assuming all the neccessary requirements.txt
-                    ////sh "pip install -r requirements.txt"
-                    
-                    // Additional dependencies for the PyInstaller using the PiP 
-                    ///sh "pip install pyinstaller"
-                }
+                // Activate the virtual environment
+                ////sh ". $VIRTUAL_ENV/bin/activate"
+                
+                // Install dependencies, assuming all the neccessary requirements.txt
+                ////sh "pip install -r requirements.txt"
+                
+                // Additional dependencies for the PyInstaller using the PiP 
+                ///sh "pip install pyinstaller"
+                
             }
         }
 
          stage('Compiling_Stage') {
             steps {
-                script {
-                    echo "compliation stage completed"
-                    // Compiling the Tkinter app to a standalone executable with PyInstaller
-                    ////sh ". $VIRTUAL_ENV/bin/activate && pyinstaller --onefile --windowed ${mainMBIApp}.py"
-                }
+                
+                echo "compliation stage completed"
+                // Compiling the Tkinter app to a standalone executable with PyInstaller
+                ////sh ". $VIRTUAL_ENV/bin/activate && pyinstaller --onefile --windowed ${mainMBIApp}.py"
+            
             }
         }
 
@@ -72,25 +72,24 @@ pipeline {
 
         stage('Testing_Stage') {
             steps {
-                script {
-                    echo "Testing stage completed"
-                    // Running a simple test script 
-                    ////sh ". $VIRTUAL_ENV/bin/activate && python test_${mainMBIApp}.py"
-                }
+                
+                echo "Testing stage completed"
+                // Running a simple test script 
+                ////sh ". $VIRTUAL_ENV/bin/activate && python test_${mainMBIApp}.py"
+                
             }
         }
 
         stage('Package_Stage') {
             steps {
-                script {
-                    echo "Package stage completed"
-                    // Move the executable to a customized directory
-                    // Create a directory named output for the deployment application
-                    //////sh "mkdir -p output"
+                
+                echo "Package stage completed"
+                // Move the executable to a customized directory
+                // Create a directory named output for the deployment application
+                //////sh "mkdir -p output"
 
-                    // Copy the executable file into created deployment directory
-                    /////sh "cp ${APP_NAME}.py output/${mainMBIApp}"
-                }
+                // Copy the executable file into created deployment directory
+                /////sh "cp ${APP_NAME}.py output/${mainMBIApp}"
             }
         }
 
