@@ -2,14 +2,14 @@ pipeline {
     agent any
 
      // Setuping our environment
-    /* environment {
+    environment {
         // Setuping out virtual envrionment
         VIRTUAL_ENV = 'venv'
         // Give the name of the application
         APP_NAME = 'mainMBIApp'
         // Set the application version
         APP_VERSION = '1.0'
-    } */
+    }
 
     stages {
         // Checking if github exist
@@ -20,7 +20,7 @@ pipeline {
                 sh 'python3 --version'
 
                 // Checking out for the GitHub repository
-               //checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NanaChiq/Emma_Assignment.git']])
+               checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NanaChiq/Emma_Assignment.git']])
      
             }
         }
@@ -31,19 +31,17 @@ pipeline {
                 // Print on the teminal.
                 echo "Preparation stage"
 
-                sh 'python3 mainApp.py'
-
                 // Setting up my virtual environment
-                //sh "python -m venv $VIRTUAL_ENV"
+                sh "python -m venv $VIRTUAL_ENV"
 
                 // Activate the virtual environment
-                ////sh ". $VIRTUAL_ENV/bin/activate"
+                sh ". $VIRTUAL_ENV/bin/activate"
                 
                 // Install dependencies, assuming all the neccessary requirements.txt
-                ////sh "pip install -r requirements.txt"
+                sh "pip install -r requirements.txt"
                 
                 // Additional dependencies for the PyInstaller using the PiP 
-                ///sh "pip install pyinstaller"
+                sh "pip install pyinstaller"
                 
             }
         }
