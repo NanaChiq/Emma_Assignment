@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {dockerfile true}
 
      // Setuping our environment
     environment {
@@ -31,7 +31,7 @@ pipeline {
                     // Print on the teminal.
                     echo "Preparation stage"
 
-                    sh 'pip install python'
+                    sh 'pip install python3'
 
                     // Setting up my virtual environment
                     //sh "python -m venv $VIRTUAL_ENV"
