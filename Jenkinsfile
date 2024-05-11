@@ -38,7 +38,7 @@ pipeline {
                 ///////git 'https://github.com/NanaChiq/Emma_Assignment.git'
 
                 // Setting up my virtual environment
-                sh "python -m venv ${VIRTUAL_ENV}"
+                /////sh "python -m venv ${VIRTUAL_ENV}"
 
                 // Activate the virtual environment
                 ///sh ". ${VIRTUAL_ENV}/bin/activate"
