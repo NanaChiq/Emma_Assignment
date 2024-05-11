@@ -43,7 +43,7 @@ pipeline {
                 
                 // Additional dependencies for the PyInstaller using the PiP 
                 //sh "pip install pyinstaller"
-                //sh "apt install python3-pyinstaller"
+                sh "apt install python3-pyinstaller"
                 
             }
         }
