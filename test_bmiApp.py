@@ -115,6 +115,12 @@ def test_entryDataTypeByUser():
 
     print(ValueError)
 
+
+############################################################################
+############################################################################
+############################################################################
+############################################################################
+
 # No validation check for type of data.
 def test_noProperValidationChecks():
     name = 201254854 # No validation of datatype and the lenght of characters
@@ -148,24 +154,6 @@ def test_noProperValidationChecks():
     conn.close()
     
 
-
-
-
-
-""" def test_insert_data(self):
-        # Simulate entering data and clicking the submit button
-        self.app.name_entry.insert(0, "John Doe")
-        self.app.submit_btn.invoke()
-
-        # Verify data insertion
-        self.app.cursor.execute("SELECT * FROM patients")
-        result = self.app.cursor.fetchall()
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result[0][1], "John Doe") """
-
-"""  def tearDown(self):
-        # Close the connection and destroy the app
-        self.app.close() """
 
 test_insertingPatientData()
 test_retrivalOfPatientData()

@@ -16,7 +16,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Print on the teminal.
-                echo 'Checkout stage'
+                echo 'Checkout stage vvv'
                 
 
                 // Checking out for the GitHub repository
