@@ -39,7 +39,7 @@ pipeline {
                 
                 // Install dependencies, assuming all the neccessary requirements.txt
                 //sh "pip install -r requirements.txt"
-                sudo apt install python3-tkinter
+                sh 'sudo apt install python3-tkinter'
                 
                 // Additional dependencies for the PyInstaller using the PiP 
                 //sh "pip install pyinstaller"
