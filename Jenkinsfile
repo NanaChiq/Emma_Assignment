@@ -16,7 +16,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Print on the teminal.
-                echo 'Checkout stage Testing 9'
+                echo 'Checkout stage'
                 
 
                 // Checking out for the GitHub repository
@@ -30,6 +30,8 @@ pipeline {
                 script {
                     // Print on the teminal.
                     echo "Preparation stage"
+
+                    sh 'pip install python'
 
                     // Setting up my virtual environment
                     //sh "python -m venv $VIRTUAL_ENV"
