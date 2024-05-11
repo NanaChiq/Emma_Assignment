@@ -19,7 +19,7 @@ pipeline {
             steps {
                 // Print on the teminal.
                 echo 'Checkout stage'
-                sh 'python3 --version'
+                sh 'python --version'
 
                 // Checking out for the GitHub repository
                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NanaChiq/Emma_Assignment.git']])
@@ -34,7 +34,7 @@ pipeline {
                 echo "Preparation stage"
 
                 // Setting up my virtual environment
-                sh "python3 -m venv $VIRTUAL_ENV"
+                sh "python -m venv $VIRTUAL_ENV"
 
                 // Activate the virtual environment
                 sh ". $VIRTUAL_ENV/bin/activate"
