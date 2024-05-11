@@ -38,10 +38,12 @@ pipeline {
                 sh ". $VIRTUAL_ENV/bin/activate"
                 
                 // Install dependencies, assuming all the neccessary requirements.txt
-                sh "pip install -r requirements.txt"
+                //sh "pip install -r requirements.txt"
+                sh "apt install python3-tkinter"
                 
                 // Additional dependencies for the PyInstaller using the PiP 
-                sh "pip install pyinstaller"
+                //sh "pip install pyinstaller"
+                sh "apt install python3-pyinstaller"
                 
             }
         }
