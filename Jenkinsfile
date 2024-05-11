@@ -33,7 +33,7 @@ pipeline {
                 // Print on the teminal.
                 echo "Preparation stage"
 
-                sh "pip install -r requirements.txt"
+                ///////sh "pip install -r requirements.txt"
 
                 ///////git 'https://github.com/NanaChiq/Emma_Assignment.git'
 
