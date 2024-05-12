@@ -69,5 +69,25 @@ pipeline {
             }
         }
 
+        stage('Package_Stage') {
+            steps {
+
+                 withPythonEnv('CPython-3.1.1') {
+                    echo "Package stage completed files save in the workspace directory"
+                    
+                }
+                
+                
+            }
+        }
+
+         stage('Cleanup_Stage') {
+            steps {
+                echo "Cleaning stage completed"
+                // Clean up environment if neccesary
+                cleanWs()
+            }
+        }
+
     }
 }
