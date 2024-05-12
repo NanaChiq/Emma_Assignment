@@ -22,7 +22,7 @@ pipeline {
                 //sh 'python --version'
 
                 // Checking out for the GitHub repository
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NanaChiq/Emma_Assignment.git']])
+                /////checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NanaChiq/Emma_Assignment.git']])
      
             }
         }
