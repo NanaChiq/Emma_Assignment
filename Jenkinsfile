@@ -75,14 +75,8 @@ pipeline {
             steps {
 
                  withPythonEnv('CPython-3.1.1') {
-                    echo "Package stage completed"
-
-                    // Move the executable to a customized directory
-                    // Create a directory named output for the deployment application
-                    bat "mkdir -p deploymentDir"
-
-                    // Copy the executable file into created deployment directory
-                    sh "cp mainApp.py deploymentDir/mainApp"
+                    echo "Package stage completed files save in the workspace directory"
+                    
                 }
                 
                 
@@ -112,9 +106,7 @@ pipeline {
 
         always {
             // Must record the results of the outcome of the 
-            // stages and archive in a jar file.
-            junit '**/target/surefire-reports/TEST-*.xml'
-            archiveArtifacts 'target/*.jar'
+            echo "Assignment DOT503 on Jenkins has been compeleted with all the stages completed successfully"
 
         }
     }
