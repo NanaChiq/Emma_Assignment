@@ -82,7 +82,7 @@ pipeline {
                     bat "mkdir -p deploymentDir"
 
                     // Copy the executable file into created deployment directory
-                    sh "cp ${APP_NAME}.py deploymentDir/${mainMBIApp}"
+                    sh "cp mainApp.py deploymentDir/mainApp"
                 }
                 
                 
