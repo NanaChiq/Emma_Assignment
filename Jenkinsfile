@@ -56,5 +56,18 @@ pipeline {
             }
         }
 
+        stage('Testing_Stage') {
+            steps {
+                withPythonEnv('CPython-3.1.1') {
+                    //echo "Testing stage completed"
+
+                    // Running a simple test script 
+                    bat 'python test_bmiApp.py'
+                }
+                
+                
+            }
+        }
+
     }
 }

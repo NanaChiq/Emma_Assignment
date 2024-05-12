@@ -84,7 +84,7 @@ def test_retrivalOfPatientData():
 def test_searchButton():
         # Simulate entering data and clicking the search button
         patient_contact = name_entry.insert(0, "0252525625")
-        #search_detail_btn.invoke()
+        search_detail_btn.invoke()
 
 
         # Verify data insertion
@@ -171,7 +171,7 @@ def test_noProperValidationChecks():
 
 test_insertingPatientData()
 test_retrivalOfPatientData()
-#test_searchButton()
+test_searchButton()
 #test_entryDataTypeByUser()
 test_noProperValidationChecks
 
