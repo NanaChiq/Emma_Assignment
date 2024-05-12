@@ -56,7 +56,8 @@ pipeline {
                 withPythonEnv('CPython-3.1.1') {
                     // Uses the default system installation of Python
                     // Equivalent to withPythonEnv('/usr/bin/python') 
-                    sh 'python --version'
+                    //sh 'python --version'
+                    echo "Preparationbbb stage"
                 }
                 
             }
