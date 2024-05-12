@@ -90,4 +90,23 @@ pipeline {
         }
 
     }
+
+    // To be executed after all the stages above are done
+    post {
+        // Must run only if all the stages runs successfully
+        success {
+            echo "Completed all stages successfuly"
+        }
+
+        // Must run only if a failure occurs
+        failure {
+            echo "Failed to complete"
+        }
+
+        always {
+            // Must record the results of the outcome of the 
+            echo "Assignment DOT503 on Jenkins has been compeleted with all the stages completed successfully"
+
+        }
+    }
 }
