@@ -53,7 +53,7 @@ pipeline {
                 /* withPythonEnv('/usr/bin/python3.8') {
                     sh 'echo "Job is starting" '
                 }  */
-                withPythonEnv('python') {
+                withPythonEnv('CPython-3.1.1') {
                     // Uses the default system installation of Python
                     // Equivalent to withPythonEnv('/usr/bin/python') 
                     sh 'python --version'
