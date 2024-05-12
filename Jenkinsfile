@@ -3,14 +3,9 @@ pipeline {
 
      // Setuping our environment
     environment {
-        // Setuping out virtual envrionment
-        VIRTUAL_ENV = 'venv'
-        // Give the name of the application
         APP_NAME = 'mainMBIApp'
         // Set the application version
         APP_VERSION = '1.0'
-
-        PYTHON_EXECUTABLE = 'python3'
     }
 
     stages {
@@ -20,9 +15,8 @@ pipeline {
                 // Print on the teminal.
                 echo 'Checkout stage'
                 
-
                 // Checking out for the GitHub repository
-                /////checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NanaChiq/Emma_Assignment.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/NanaChiq/Emma_Assignment.git']])
      
             }
         }
@@ -33,7 +27,7 @@ pipeline {
                 // Print on the teminal.
                 echo "Preparation stage"
 
-                ///////sh "pip install -r requirements.txt"
+                /////sh "pip install -r requirements.txt"
 
                 ///////git 'https://github.com/NanaChiq/Emma_Assignment.git'
 
@@ -53,25 +47,26 @@ pipeline {
                 /* withPythonEnv('/usr/bin/python3.8') {
                     sh 'echo "Job is starting" '
                 }  */
+                //////////
+                /////////
+                // The CPython is a ShiningPanda plugin which adds Python support to Jenkins with some useful 
+                // builders (Python builder, virtualenv builder, tox builder...) 
+                // and the ability to use a Python axis in multi-configuration projects 
+                // (for testing on multiple versions of Python). 
+                // https://plugins.jenkins.io/shiningpanda/
                 withPythonEnv('CPython-3.1.1') {
-                    // Uses the default system installation of Python
-                    // Equivalent to withPythonEnv('/usr/bin/python') 
-                    //sh 'python --version'
-                    bat 'pip install -r requirements.txt'
+                    //bat "pip install -r requirements.txt" No python libraries a needed
+
+                    // Display the python's version
+                    bat 'python --version'
+
+                    
                 }
                 
             }
         }
 
-         stage('Compiling_Stage') {
-            steps {
-                
-                echo "compliation stage completed"
-                // Compiling the Tkinter app to a standalone executable with PyInstaller
-                ////sh ". $VIRTUAL_ENV/bin/activate && pyinstaller --onefile --windowed ${mainMBIApp}.py"
-            
-            }
-        }
+
 
         stage('Building_Stage') {
             steps {
@@ -80,7 +75,7 @@ pipeline {
                 /////git 'https://github.com/NanaChiq/Emma_Assignment.git'
 
                 // Build the application for the GitHub repository
-                /////sh 'python mainApp.py'
+                bat 'python mainApp.py'
 
             }
         }
