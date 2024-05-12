@@ -83,7 +83,7 @@ def test_retrivalOfPatientData():
 # Checking if Search button in BMI tab is function as expected
 def test_searchButton():
         # Simulate entering data and clicking the search button
-        patient_contact = name_entry.insert(0, "023333333")
+        patient_contact = name_entry.insert(0, "0252525625")
         search_detail_btn.invoke()
 
 
@@ -117,9 +117,9 @@ def test_entryDataTypeByUser():
 
 # No validation check for type of data.
 def test_noProperValidationChecks():
-    name = 201254854 # No validation of datatype and the lenght of characters
-    email = 'uuuuuuu44444444m' # No email validation check 
-    contact = "+2352545858565487" # No checking of number of characters for a telephone number
+    name = "Emma" # No validation of datatype and the lenght of characters
+    email = 'emma@gmail.com' # No email validation check 
+    contact = "+023333333" # No checking of number of characters for a telephone number
     dob = birthdate_entry.get() # No date vlaidation ckeck
     occupation = occupation_entry.get()
 
