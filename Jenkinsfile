@@ -56,7 +56,7 @@ pipeline {
                 withPythonEnv('python') {
                     // Uses the default system installation of Python
                     // Equivalent to withPythonEnv('/usr/bin/python') 
-                    sh 'echo "Job is starting" '
+                    sh 'python --version'
                 }
                 
             }
