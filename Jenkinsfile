@@ -52,7 +52,12 @@ pipeline {
                 //sh "apt install python3-pyinstaller"
                 /* withPythonEnv('/usr/bin/python3.8') {
                     sh 'echo "Job is starting" '
-                } */ 
+                }  */
+                withPythonEnv('python') {
+                    // Uses the default system installation of Python
+                    // Equivalent to withPythonEnv('/usr/bin/python') 
+                    sh 'echo "Job is starting" '
+                }
                 
             }
         }
