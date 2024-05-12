@@ -44,5 +44,17 @@ pipeline {
             }
         }
 
+        stage('Building_Stage') {
+            steps {
+                withPythonEnv('CPython-3.1.1') {
+                    echo "Building stage completed"
+
+                    // Build the application for the GitHub repository
+                    bat 'python mainApp.py'
+                }
+                
+            }
+        }
+
     }
 }
