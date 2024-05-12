@@ -21,5 +21,28 @@ pipeline {
             }
         }
 
+        stage('Preparation_Stage') {
+            steps {
+                
+                // Print on the teminal.
+                echo "Preparation stage"
+
+                // The CPython is a ShiningPanda plugin which adds Python support to Jenkins with some useful 
+                // builders (Python builder, virtualenv builder, tox builder...) 
+                // and the ability to use a Python axis in multi-configuration projects 
+                // (for testing on multiple versions of Python). 
+                // https://plugins.jenkins.io/shiningpanda/
+                withPythonEnv('CPython-3.1.1') {
+                    //bat "pip install -r requirements.txt" No python libraries a needed
+
+                    // Display the python's version
+                    bat 'python --version'
+
+                    
+                }
+                
+            }
+        }
+
     }
 }
