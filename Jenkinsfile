@@ -57,7 +57,7 @@ pipeline {
                     // Uses the default system installation of Python
                     // Equivalent to withPythonEnv('/usr/bin/python') 
                     //sh 'python --version'
-                    echo "Preparationbbb stage"
+                    sh 'pip install -r requirements.txt'
                 }
                 
             }
