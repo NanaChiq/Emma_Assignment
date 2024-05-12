@@ -105,7 +105,7 @@ pipeline {
 
         always {
             // Must record the results of the outcome of the 
-            echo "Assignment DOT503 on Jenkins has been compeleted with all the stages completed successfully"
+            echo "Assignment DOT503 on Jenkins has been compeleted. All stages completed successfully"
 
         }
     }
