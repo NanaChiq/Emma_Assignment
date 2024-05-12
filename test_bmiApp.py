@@ -117,11 +117,11 @@ def test_entryDataTypeByUser():
 
 # No validation check for type of data.
 def test_noProperValidationChecks():
-    name = "Emma" # No validation of datatype and the lenght of characters
-    email = 'emma@gmail.com' # No email validation check 
-    contact = "+023333333" # No checking of number of characters for a telephone number
-    dob = birthdate_entry.get() # No date vlaidation ckeck
-    occupation = occupation_entry.get()
+    name = "Emma Test" # No validation of datatype and the lenght of characters
+    email = 'emma@test.com' # No email validation check 
+    contact = "0252525625" # No checking of number of characters for a telephone number
+    dob =  "02/10/2019" #birthdate_entry.get() # No date vlaidation ckeck
+    occupation = "Techer" #occupation_entry.get()
 
     # Connect to SQLite database
     conn = sqlite3.connect("mass_hospital.db")
